@@ -45,6 +45,7 @@ div#hmenu {
    width: 100%; 
    text-align: center;
    color: #ffffff;
+   border-radius: 20px;
 } 
 
 div#hmenu ul { 
@@ -65,6 +66,7 @@ div#hmenu ul a:link{
    font-weight: bold;
    font-size: medium;
    color: #ffffff;
+   border-radius: 20px;
 } 
 div#hmenu ul a:visited{
    margin: 0;
@@ -90,4 +92,66 @@ div#hmenu ul a:hover{
 	font-size: medium;
 	color: #WHITE;
 	background-color: #2261E8;
+}
+
+
+
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* unvisited link */
+button:link {
+  color: green;
+}
+
+/* visited link */
+button:visited {
+  color: blue;
+}
+
+/* mouse over link */
+button:hover {
+  color: red;
+}
+
+/* selected link */
+button:active {
+  color: yellow;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Search bar */
+/* Style the search field */
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 30%;
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+   display:block;
+ float:left;
 }
