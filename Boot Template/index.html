@@ -247,8 +247,20 @@
           <h2>Save your itinerary!</h2>
           <form name="sentMessage" id="contactForm" novalidate="novalidate">
 
+              <div class="control-group">
+                  <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                    <label>Name</label>
+                    <input class="form-control" id="name" type="text" placeholder="Name" required="required"
+                      data-validation-required-message="Please enter your name.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <br>
+
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
+
+
 
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="Flights" id="defaultCheck1">
@@ -267,14 +279,7 @@
               </div>
             </div>
 
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Flights</label>
-                <input class="form-control" id="name" type="text" placeholder="Name" required="required"
-                  data-validation-required-message="Please enter your name.">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
+            
             <br>
             <div id="success"></div>
             <div class="form-group">
