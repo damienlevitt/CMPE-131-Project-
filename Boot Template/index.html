@@ -133,6 +133,24 @@
                 <p class="help-block text-danger"></p>
               </div>
             </div>
+
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <label>Passengers</label>
+                <input class="form-control" id="email" type="number" placeholder="Passengers" required="required"
+                  data-validation-required-message="Please enter an arrival date">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <button class="btn btn-warning">Round Trip</button>
+            </div>
+
+            <div class="form-group">
+              <button class="btn btn-warning">One Way</button>
+            </div>
+
             <br>
             <div id="success"></div>
             <div class="form-group">
@@ -391,14 +409,16 @@
 
                   <div class="control-group">
                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                      <input class="form-control" id="name" type="number" placeholder="Persons" required="required"
+                      <label for="persons">Persons</label>
+                      <input class="form-control" id="persons" type="number" placeholder="Persons" required="required"
                         data-validation-required-message="Please enter your name.">
                     </div>
                   </div>
 
                   <div class="control-group">
                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                      <input class="form-control" id="name" type="number" placeholder="Beds" required="required"
+                      <label for="beds">Beds</label>
+                      <input class="form-control" id="beds" type="number" placeholder="Beds" required="required"
                         data-validation-required-message="Please enter your name.">
                     </div>
                   </div>
@@ -445,9 +465,9 @@
                 <!-- Portfolio Modal - Image -->
                 <!-- <img class="img-fluid rounded mb-5" src="img/portfolio/cake.png" alt=""> -->
                 <!-- Portfolio Modal - Text -->
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam
-                  nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae?
-                  Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                <p class="mb-5">
+                  Text
+                </p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
                   <i class="fas fa-times fa-fw"></i>
                   Close Window
