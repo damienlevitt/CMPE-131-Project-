@@ -143,14 +143,18 @@
               </div>
             </div>
 
-            <div class="form-group">
-              <button class="btn btn-warning">Round Trip</button>
+            <br>
+
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-warning active">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> Round Trip
+              </label>
+              <label class="btn btn-warning">
+                <input type="radio" name="options" id="option2" autocomplete="off"> One Way
+              </label>
             </div>
 
-            <div class="form-group">
-              <button class="btn btn-warning">One Way</button>
-            </div>
-
+            <br>
             <br>
             <div id="success"></div>
             <div class="form-group">
@@ -397,34 +401,33 @@
                   <div class="control-group">
                     <div class="form-group controls mb-0 pb-2">
                       <p>Price</p>
-                      <select name="Price" id="">
-                        <option value="">$</option>
-                        <option value="">$$</option>
-                        <option value="">$$$</option>
-                        <option value="">$$$$</option>
+                      <select name="price" id="price">
+                        <option value="1">$</option>
+                        <option value="2">$$</option>
+                        <option value="3">$$$</option>
+                        <option value="4">$$$$</option>
                       </select>
                     </div>
                   </div>
 
-
-                  <div class="control-group">
-                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                      <label for="persons">Persons</label>
-                      <input class="form-control" id="persons" type="number" placeholder="Persons" required="required"
-                        data-validation-required-message="Please enter your name.">
-                    </div>
-                  </div>
-
-                  <div class="control-group">
-                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                      <label for="beds">Beds</label>
-                      <input class="form-control" id="beds" type="number" placeholder="Beds" required="required"
-                        data-validation-required-message="Please enter your name.">
-                    </div>
-                  </div>
-
-
+                  <button id="HotelSearch" class="btn btn-warning">Search</button>
                 </form>
+
+                <table class="table table-borderless">
+                  <thead>
+                    <tr>
+                      <th>Business</th>
+                      <th>Price</th>
+                      <th>Add</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+
+                    </tr>
+                  </tbody> 
+                </table>
+
 
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
                   <i class="fas fa-times fa-fw"></i>
@@ -709,6 +712,7 @@
   <!-- Custom scripts for this template -->
   <script src="js/freelancer.min.js"></script>
 
+  <script src="js/scripts.js"></script>
 </body>
 
 </html>
