@@ -25,7 +25,7 @@ $(document).ready(function () {
 
                 for (var i = 0; i < count; i++) {
                     console.log('success: ' + data.businesses[i].name);
-                    $('#HotelTable tr:last').after('<tr><td><img class="thumbnails" src=' + data.businesses[i].image_url + '></td><td>' + data.businesses[i].location.city + '</td><td>' + data.businesses[i].name + '</td><td>' + data.businesses[i].rating + '</td><td>' + data.businesses[i].price + '</td><td><button>add</button></td></tr>');
+                    $('#HotelTable tr:last').after('<tr><td><img class="thumbnails" src=' + data.businesses[i].image_url + '></td><td>' + data.businesses[i].location.city + '</td><td>' + data.businesses[i].name + '</td><td>' + data.businesses[i].rating + '</td><td>' + data.businesses[i].price + '</td><td><button class="btn btn-warning">add</button></td></tr>');
                 }
             }
         });
