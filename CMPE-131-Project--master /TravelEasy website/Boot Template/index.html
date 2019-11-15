@@ -95,60 +95,69 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-          <form name="sentMessage" id="contactForm" novalidate="novalidate">
-            <h2>From</h2>
+          <form name="FlightForm" id="FlightForm">
+
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>City Or Airport</label>
-                <input class="form-control" id="name" type="text" placeholder="City Or Airport" required="required"
-                  data-validation-required-message="Please enter a location">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Dates</label>
-                <input class="form-control" id="email" type="date" placeholder="Dates" required="required"
-                  data-validation-required-message="Please enter a departure date">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <br>
-            <h2>To</h2>
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>City Or Airport</label>
-                <input class="form-control" id="name" type="text" placeholder="City Or Airport" required="required"
-                  data-validation-required-message="Please enter a location">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Dates</label>
-                <input class="form-control" id="email" type="date" placeholder="Dates" required="required"
+                <label>Passengers</label>
+                <input class="form-control" id="Passengers" type="number" placeholder="Passengers" required="required"
                   data-validation-required-message="Please enter an arrival date">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
 
+
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Passengers</label>
-                <input class="form-control" id="email" type="number" placeholder="Passengers" required="required"
-                  data-validation-required-message="Please enter an arrival date">
+                <label>Airport Code (From)</label>
+                <input class="form-control" id="OriginAirport" type="text" placeholder="Airport Code (From)"
+                  required="required" data-validation-required-message="Please enter a location">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
+
+
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <label>Airport Code (To)</label>
+                <input class="form-control" id="DestinationAirport" type="text" placeholder="Airport Code (To)"
+                  required="required" data-validation-required-message="Please enter a location">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+
+            <br>
+            <h2>Departure Date</h2>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <label>Departure Date</label>
+                <input class="form-control" id="OriginDate" type="date" placeholder="Departure Date" required="required"
+                  data-validation-required-message="Please enter a departure date">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+
+            <br>
+            <h2>Return Date</h2>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <label>Return Date</label>
+                <input class="form-control" id="DestinationDate" type="date" placeholder="Return Date" required
+                  data-validation-required-message="Please enter a return date since you have selected round-trip">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+
+
 
             <br>
 
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
               <label class="btn btn-warning active">
-                <input type="radio" name="options" id="option1" autocomplete="off" checked> Round Trip
+                <input type="radio" name="options" id="RoundTrip" autocomplete="off" checked> Round Trip
               </label>
               <label class="btn btn-warning">
-                <input type="radio" name="options" id="option2" autocomplete="off"> One Way
+                <input type="radio" name="options" id="OneWay" autocomplete="off"> One Way
               </label>
             </div>
 
@@ -156,7 +165,7 @@
             <br>
             <div id="success"></div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Submit</button>
+              <button type="button" class="btn btn-primary btn-xl" id="FlightSearchBtn">Search</button>
             </div>
           </form>
         </div>
@@ -246,42 +255,93 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-          <h2>Save your itinerary!</h2>
           <form name="sentMessage" id="contactForm" novalidate="novalidate">
 
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="Flights" id="defaultCheck1">
-                  Flights
-                  <br>
-                  <input class="form-check-input" type="checkbox" value="Flights" id="defaultCheck1">
-                  Accomodation
-                  <br>
-                  <input class="form-check-input" type="checkbox" value="Flights" id="defaultCheck1">
-                  Food
-                  <br>
-                  <input class="form-check-input" type="checkbox" value="Flights" id="defaultCheck1">
-                  Activities
-                  <br>
-                </div>
-              </div>
-            </div>
-
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Flights</label>
-                <input class="form-control" id="name" type="text" placeholder="Name" required="required"
-                  data-validation-required-message="Please enter your name.">
+                <label>Name</label>
+                <input class="form-control" id="name" type="text" placeholder="Name">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <br>
-            <div id="success"></div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Save</button>
+
+            <div>
+              <h2>Flight</h2>
+              <div>
+                <table class="table table-borderless table-hover">
+                  <thead>
+                    <tr>
+                      <th>From</th>
+                      <th>To</th>
+                      <th>Date</th>
+                      <th>Link</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2>Accomodation</h2>
+
+              <div>
+                <table id="ItinHotel" class="table table-borderless table-hover">
+                  <thead>
+                    <tr>
+                      <th>Image</th>
+                      <th>Hotel</th>
+                      <th>City</th>
+                      <th>Price</th>
+                      <th>Link</th>
+                      <th>Remove</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr></tr>
+                  </tbody>
+                </table>
+              </div>
+              <h2>Food</h2>
+
+              <div>
+                <table id="ItinFood" class="table table-borderless table-hover">
+                  <thead>
+                    <tr>
+                      <th>Image</th>
+                      <th>Name</th>
+                      <th>City</th>
+                      <th>Price</th>
+                      <th>Link</th>
+                      <th>Remove</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr></tr>
+                  </tbody>
+                </table>
+              </div>
+              <h2>Activities</h2>
+              <table class="table table-borderless table-hover">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Link</th>
+                    <th>Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr></tr>
+                </tbody>
+              </table>
             </div>
+            <br>
+            <!-- <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Save</button>
+            </div> -->
           </form>
         </div>
       </div>
@@ -396,7 +456,8 @@
                 </h5>
                 <form class="mb-5">
 
-                  <input type="text" name="city" id="city" placeholder="City" class="form-control" required>
+                  <input type="text" name="city" id="city" placeholder="City" class="form-control" required="required"
+                    data-validation-required-message="Please enter a city">
                   <br>
                   <div class="control-group">
                     <div class="form-group controls mb-0 pb-2">
@@ -415,7 +476,7 @@
 
                 <h1>Results</h1>
 
-                <table class="table table-borderless" id="HotelTable">
+                <table class="table table-borderless table-hover" id="HotelTable">
                   <thead>
                     <tr>
                       <th>Image</th>
@@ -475,37 +536,55 @@
                   Select your price range and food preference from the list below:
                 </h5>
                 <form class="mb-5">
-                  <div class="control-group">
-                    <div class="form-group controls mb-0 pb-2">
-                      <p>Food</p>
-                      <select name="Food" id="">
-                        <option value="">American</option>
-                        <option value="">Chinese</option>
-                        <option value="">Greek</option>
-                        <option value="">Italian</option>
-                        <option value="">Indian</option>
-                        <option value="">Japanese</option>
-                        <option value="">Korean</option>
-                        <option value="">Thai</option>
-                        <option value="">Vietnamese</option>
-                      </select>
-                    </div>
-                  </div>
+
+                  <label for="Food">Food</label>
+                  <input type="text" class="form-control" id="Food" placeholder="Search Food">
+                  <br>
+                  <label for="FoodCity">City</label>
+                  <input type="text" class="form-control" id="FoodCity" placeholder="City">
+                  <br>
                   <div class="control-group">
                     <div class="form-group controls mb-0 pb-2">
                       <p>Price</p>
-                      <select name="Price" id="">
-                        <option value="">$</option>
-                        <option value="">$$</option>
-                        <option value="">$$$</option>
-                        <option value="">$$$$</option>
+                      <select name="FoodPrice" id="FoodPrice">
+                        <option value="1">$</option>
+                        <option value="2">$$</option>
+                        <option value="3">$$$</option>
+                        <option value="4">$$$$</option>
                       </select>
                     </div>
                   </div>
+                  <br>
+
+                  <button type="button" class="btn btn-warning" id="FoodSearch">Search</button>
+
+                  <br>
+                  <br>
+
+                  <h1>Results</h1>
+
+                  <table class="table table-borderless" id="FoodTable">
+                    <thead>
+                      <tr>
+                        <th>Image</th>
+                        <th>Area</th>
+                        <th>Business</th>
+                        <th>Rating</th>
+                        <th>Price</th>
+                        <th>Add</th>
+                      </tr>
+                    </thead>
+                    <tbody id="FoodTableBody">
+                      <tr></tr>
+                    </tbody>
+                  </table>
+
                   <button class="btn btn-primary" href="#" data-dismiss="modal">
                     <i class="fas fa-times fa-fw"></i>
                     Close Window
                   </button>
+
+
               </div>
             </div>
           </div>
@@ -545,19 +624,14 @@
                 </h5>
                 <form class="mb-5">
                   <div class="control-group">
-                    <div class="form-group controls mb-0 pb-2">
-                      <p>Activity</p>
-                      <select name="Activity" id="">
-                        <option value="">Movies</option>
-                        <option value="">Museums</option>
-                        <option value="">Landmarks</option>
-                        <option value="">Theaters</option>
-                        <option value="">Shopping</option>
-                        <option value="">Tourist Spots</option>
-                        <option value="">Viewpoints</option>
-                        <option value="">Zoos</option>
-                      </select>
-                    </div>
+
+                    <button class="btn btn-info">Random Search!</button>
+                    <br>
+                    <br>
+
+                    <input type="text" class="form-control">
+                    <br>
+
                     <div class="control-group">
                       <div class="form-group controls mb-0 pb-2">
                         <p>Price</p>
@@ -568,6 +642,7 @@
                           <option value="">$$$$</option>
                         </select>
                       </div>
+                      <br>
                       <button class="btn btn-primary" href="#" data-dismiss="modal">
                         <i class="fas fa-times fa-fw"></i>
                         Close Window
